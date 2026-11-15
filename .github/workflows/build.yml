@@ -8,6 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: unzip -q .github/workflows/Enquadra-Android.zip
+      - run: sed -i 's/exposureCompensationState/exposureState/' Enquadra/app/src/main/java/pt/enquadra/MainActivity.kt
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
